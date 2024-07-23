@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {NavLink as ReactLink, useNavigate} from 'react-router-dom';
+import { CgProfile } from "react-icons/cg";
+import { IoIosLogOut } from "react-icons/io";
 import {
   Collapse,
   Navbar,
@@ -79,12 +81,12 @@ doLogout(()=>{
             </NavItem> 
             <NavItem>
               <NavLink tag={ReactLink} to="/user/profileInfo">
-              Profile
+              <CgProfile style={{fontSize:"30px"}}/>
               </NavLink>
             </NavItem>
             <NavItem onClick={Logout}>
               <NavLink  >
-             Logout
+             <IoIosLogOut style={{fontSize:"30px", cursor:'pointer'}}/>
               </NavLink>
             </NavItem> 
             </>

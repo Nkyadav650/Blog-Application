@@ -1,11 +1,18 @@
 import React from 'react'
 import userContext from './userContext'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 function UserProvider ({children}){
 
-    const[user,setUser]=useState({name:'Rawan'});
+  const userData = localStorage.getItem('data');
 
+    const[user,setUser]=useState(null);
+    useEffect(() => {
+      
+      if (userData) {
+        setUser(JSON.parse(userData));
+      }
+    }, []);
   return (
     
     <userContext.Provider value={user}>
